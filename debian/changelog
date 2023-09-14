@@ -1,5 +1,14 @@
-template-repository (1.0-1) unstable; urgency=medium
+mimepull (1.9.7-2) unstable; urgency=medium
 
-  * Initial release
+  * Removed the unused dependency on libsvnkit-java
+  * Improved the package description
+  * Standards-Version updated to 4.6.2
+  * Switch to debhelper level 13
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 23 Jan 2023 08:41:01 +0100
+
+mimepull (1.9.7-1) unstable; urgency=medium
+
+  * Initial release (Closes: #904084)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 19 Jul 2018 13:24:45 +0200

@@ -1,15 +1,28 @@
-Source: template-repository
-Section: unknown
+Source: mimepull
+Section: java
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ default-jdk,
+ junit,
+ libmaven-bundle-plugin-java,
+ maven-debian-helper (>= 2.1)
+Standards-Version: 4.6.2
+Vcs-Git: https://salsa.debian.org/java-team/mimepull.git
+Vcs-Browser: https://salsa.debian.org/java-team/mimepull
+Homepage: https://javaee.github.io/metro-mimepull/
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libmimepull-java
+Architecture: all
+Depends: ${maven:Depends}, ${misc:Depends}
+Suggests: ${maven:OptionalDepends}
+Description: Pull API for parsing MIME messages
+ Mimepull provides a streaming API to access attachments parts in a MIME
+ message. It's designed to parse large MIME messages that couldn't be loaded
+ into memory. MIME message parsing is done using pull-parsing, much similar
+ to StAX in XML world. The MIME parts are constructed lazily, and parsing
+ is triggered by applications while reading the attachment parts. The API
+ provides various configuration options to control parsing and storing of
+ MIME parts.
